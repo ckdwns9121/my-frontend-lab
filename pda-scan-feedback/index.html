@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDA Scan Feedback Lab</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel intro">
+        <p class="eyebrow">Browser API Lab</p>
+        <h1>PDA 스캐너 피드백</h1>
+        <p class="description">
+          PDA 스캐너가 웹 input에 바코드와 Enter를 넣는 상황을 가정하고, 서버 검증 결과에 따라
+          Web Audio beep와 Vibration 패턴을 실행합니다.
+        </p>
+      </section>
+
+      <section class="panel">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Device support</p>
+            <h2>브라우저 지원 상태</h2>
+          </div>
+          <button id="unlockAudio" type="button">작업 시작</button>
+        </div>
+
+        <dl class="status-grid">
+          <div>
+            <dt>Web Audio</dt>
+            <dd id="audioSupport">-</dd>
+          </div>
+          <div>
+            <dt>Audio state</dt>
+            <dd id="audioState">-</dd>
+          </div>
+          <div>
+            <dt>Vibration</dt>
+            <dd id="vibrationSupport">-</dd>
+          </div>
+          <div>
+            <dt>마지막 결과</dt>
+            <dd id="lastResult">대기</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="panel">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Scanner input</p>
+            <h2>바코드 입력</h2>
+          </div>
+          <span id="modeBadge" class="badge">Enter로 검증</span>
+        </div>
+
+        <label class="field" for="barcodeInput">
+          <span>바코드</span>
+          <input
+            id="barcodeInput"
+            value="ITEM-1001"
+            autocomplete="off"
+            inputmode="text"
+            autofocus
+          />
+        </label>
+
+        <div class="helper">
+          <span>성공 예시: <button class="chip" type="button" data-fill="ITEM-1001">ITEM-1001</button></span>
+          <span>실패 예시: <button class="chip" type="button" data-fill="FAIL-1001">FAIL-1001</button></span>
+          <span>중복 예시: <button class="chip" type="button" data-fill="DUP-1001">DUP-1001</button></span>
+        </div>
+
+        <div class="actions">
+          <button id="submitScan" type="button">검증 실행</button>
+          <button id="successFeedback" type="button" class="secondary">성공 피드백만 테스트</button>
+          <button id="errorFeedback" type="button" class="danger">실패 피드백만 테스트</button>
+          <button id="clearLog" type="button" class="ghost">로그 지우기</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Scan history</p>
+            <h2>스캔 로그</h2>
+          </div>
+          <span class="badge">PDA 없이 키보드 Enter로도 테스트 가능</span>
+        </div>
+        <ol id="log" class="log"></ol>
+      </section>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
