@@ -30,7 +30,7 @@ WMS 입고 프로세스에서 같은 작업자가 여러 탭을 띄워 동일한
 ## 핵심 개념
 
 ```js
-navigator.locks.request("cgkr:inbound:WRO-1001", { ifAvailable: true }, async (lock) => {
+navigator.locks.request("wms:inbound:WRO-1001", { ifAvailable: true }, async (lock) => {
   if (!lock) {
     return "LOCKED";
   }
@@ -43,7 +43,7 @@ navigator.locks.request("cgkr:inbound:WRO-1001", { ifAvailable: true }, async (l
 `ifAvailable: true`를 사용하면 lock을 바로 잡을 수 없을 때 기다리지 않고 `lock === null`을 받습니다. 이 방식은 사용자에게 "다른 탭에서 처리 중"이라는 메시지를 즉시 보여주기 좋습니다.
 
 ```js
-navigator.locks.request("cgkr:inbound:WRO-1001", async () => {
+navigator.locks.request("wms:inbound:WRO-1001", async () => {
   await runInboundTask();
 });
 ```

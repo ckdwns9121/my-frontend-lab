@@ -1,4 +1,4 @@
-const channelName = "cgkr:inbound-lock-lab";
+const channelName = "wms:inbound-lock-lab";
 const supportsWebLocks = "locks" in navigator;
 const supportsBroadcastChannel = "BroadcastChannel" in window;
 const channel = supportsBroadcastChannel ? new BroadcastChannel(channelName) : null;
@@ -81,7 +81,7 @@ clearLogButton.addEventListener("click", () => {
 });
 
 function getOrCreateTabId() {
-  const storageKey = "cgkr:inbound-lock-lab:tab-id";
+  const storageKey = "wms:inbound-lock-lab:tab-id";
   const stored = sessionStorage.getItem(storageKey);
   if (stored) return stored;
 
@@ -99,7 +99,7 @@ function getWorkId() {
 }
 
 function createInboundLockName(workId) {
-  return `cgkr:inbound:${workId}`;
+  return `wms:inbound:${workId}`;
 }
 
 async function runInboundTask(workId) {
