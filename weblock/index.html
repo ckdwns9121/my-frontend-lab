@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Locks API Lab</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel">
+        <p class="eyebrow">Browser API Lab</p>
+        <h1>Web Locks API</h1>
+        <p class="description">
+          같은 브라우저의 여러 탭에서 동일 입고 작업을 동시에 실행하지 못하게 막는 예제입니다.
+        </p>
+
+        <div class="field">
+          <label for="workId">입고 작업 ID</label>
+          <input id="workId" value="WRO-1001" autocomplete="off" />
+        </div>
+
+        <div class="actions">
+          <button id="runIfAvailable" type="button">락 잡고 입고 작업 시작</button>
+          <button id="runQueued" type="button" class="secondary">대기열로 입고 작업 실행</button>
+          <button id="clearLog" type="button" class="ghost">로그 지우기</button>
+        </div>
+
+        <dl class="status">
+          <div>
+            <dt>탭 ID</dt>
+            <dd id="tabId"></dd>
+          </div>
+          <div>
+            <dt>현재 상태</dt>
+            <dd id="state">대기 중</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="panel">
+        <h2>실행 로그</h2>
+        <ol id="log" class="log"></ol>
+      </section>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
