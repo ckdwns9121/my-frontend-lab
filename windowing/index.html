@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>가상 스크롤 연습</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>가상 스크롤 직접 구현하기</h1>
+        <p>데이터 1,000건 · 행 높이 50px · viewport 높이 200px</p>
+      </header>
+
+      <section aria-labelledby="list-title">
+        <h2 id="list-title">주문 목록</h2>
+        <div id="viewport" role="list" aria-label="주문 목록" tabindex="0">
+          <div id="top-spacer" aria-hidden="true"></div>
+          <div id="rows" role="presentation"></div>
+          <div id="bottom-spacer" aria-hidden="true"></div>
+        </div>
+        <output id="status" aria-label="렌더링 상태">고정 높이 가상 스크롤 · DOM 재사용</output>
+      </section>
+
+      <p class="guide">스크롤하면서 개발자 도구에서 행 DOM의 변화와 재사용을 확인해보세요. 구현 내용은 <code>README.md</code>에 정리했습니다.</p>
+    </main>
+  </body>
+</html>
