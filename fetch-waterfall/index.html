@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>요청 워터폴 실험</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@19.1.0",
+          "react-dom/client": "https://esm.sh/react-dom@19.1.0/client?deps=react@19.1.0",
+          "htm": "https://esm.sh/htm@3.1.1",
+          "@tanstack/react-query": "https://esm.sh/@tanstack/react-query@5.62.0?deps=react@19.1.0"
+        }
+      }
+    </script>
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>컴포넌트 구조와 요청 워터폴</h1>
+        <p>같은 API 세 개(사용자·책·댓글)를 컴포넌트 배치만 바꿔 요청합니다. 요청이 동시에 나가는지, 계단처럼 이어지는지 비교해보세요.</p>
+      </header>
+      <div id="root">Service Worker 준비 중…</div>
+    </main>
+  </body>
+</html>
